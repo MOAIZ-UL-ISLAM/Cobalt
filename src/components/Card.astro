@@ -9,9 +9,9 @@ const { price, title, image } = Astro.props;
 ---
 
 <div
-  class="items-center border p-4 w-[340px] border-black mt-8 hover:scale-105 duration-200"
+  class="items-center border p-4 w-[340px] h-full border-black mt-8 hover:scale-105 duration-200"
 >
-  <img src={image} height="400" width="300" />
+  <img src={image} height="380" width="300" />
 
   <div class="flex flex-col justify-center gap-2 items-start w-full">
     <h5 class="text-2xl mt-6 text-gray-900">{title}</h5>
