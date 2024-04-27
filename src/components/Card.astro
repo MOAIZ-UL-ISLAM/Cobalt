@@ -2,20 +2,24 @@
 interface Props {
   title: string;
   price: string;
-  sizes: string;
   image: string;
 }
 
-const { price, title, sizes,image } = Astro.props;
+const { price, title, image } = Astro.props;
 ---
 
-<div class="items-center border p-4 w-[350px] border-black mt-8">
-    <img src={image} height="400" width="300" />
-  
-    <div class="flex flex-col justify-center items-center w-52">
-      <h5 class="text-2xl mt-6 text-gray-900">{title}</h5>
-	  <p>{sizes}</p>
-      <p class="text-xl text-blue-500">RS: {price}</p>
-    </div>
-  </div>
+<div
+  class="items-center border p-4 w-[340px] border-black mt-8 hover:scale-105 duration-200"
+>
+  <img src={image} height="400" width="300" />
 
+  <div class="flex flex-col justify-center gap-2 items-start w-full">
+    <h5 class="text-2xl mt-6 text-gray-900">{title}</h5>
+
+    <p class="text-xl text-blue-500">RS {price}</p>
+  </div>
+  <button
+    class="btn border text-xl border-black p-4 mt-6 w-[300px] hover:bg-black hover:text-white"
+    >ADD TO CART</button
+  >
+</div>

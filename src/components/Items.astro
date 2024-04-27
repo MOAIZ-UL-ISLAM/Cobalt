@@ -1,14 +1,20 @@
 ---
 import "@fontsource/poppins";
 import Card from "./Card.astro";
-
+import { getCollection } from "astro:content";
+const allitems = await getCollection("items");
 ---
 
-
-<Card title="ok" price="23" sizes="S,M,L" image="/d.jpg"/>
-
- 
-
-
-
-
+<div>
+  <div class="flex flex-row gap-12 justify-center items-center flex-wrap w-full h-full">
+    {
+      allitems.map((items) => (
+        <Card
+          title={items.data.title}
+          price={items.data.price}
+          image={items.data.image.src}
+        />
+      ))
+    }
+  </div>
+</div>

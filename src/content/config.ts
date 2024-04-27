@@ -5,7 +5,6 @@ const ItemsCollection = defineCollection({
   schema: z.object({
     title: z.string(),
     price: z.string(),
-    sizes: z.string(),
     image: z.object({
       src: z.string(),
       alt: z.string(),
